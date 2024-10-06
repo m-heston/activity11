@@ -14,6 +14,19 @@ function showCardsSortedByPriceHighLow() {
     .catch(err => console.log("Error :"+err));
 }
 
+function showCardsContainingDescriptionA() {
+    const inputField = document.getElementById('inputField');
+    inputField.style.display = 'block'; // Show the input field
+
+
+}
+function showCardsContainingDescriptionB() {
+    fetch("./MoviesFromJSON.json")
+    .then(response => response.json())
+    .then(myMovies => loadMovies(myMovies, 3))
+    .catch(err => console.log("Error :"+err));
+}
+
 
 function loadMovies(myMovies, n) {
     // ---------------------
@@ -30,6 +43,18 @@ function loadMovies(myMovies, n) {
         sortedMovies = arrayMovies.sort(
         (p1, p2) => { return (p1.price < p2.price) ? 1 : (p1.price > p2.price) ? -1 : 0 }
         );
+    }
+    if (n === 3){
+        // input description
+        const inputDescription = document.getElementById("descriptionInput").value;
+        // Hide the input field after submission
+        document.getElementById('inputField').style.display = 'none';
+        // select movies only containing input description
+        for (let movie of arrayMovies){
+            if (movie.description.includes(inputDescription)){
+            sortedMovies.push(movie);
+            }
+        }
     }
 
     // ---------------------

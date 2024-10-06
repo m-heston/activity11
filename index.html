@@ -39,6 +39,12 @@
             margin: 0;
             font-family: Arial, sans-serif;
             }
+
+            /* Hide the input field initially */
+            .input-field {
+            display: none;
+            margin: 10px 0;
+            }
         </style>
             
     </head>
@@ -49,6 +55,13 @@
             <a href="#" onclick="showCardsContainingDescriptionA()">Description</a>
             <a href="#" onclick="operation3()">Operation 4</a>
         </div>
+        <div class="input-field" id="inputField">
+            <label for="descriptionInput">Enter description:</label>
+            <input type="text" id="descriptionInput" placeholder="Enter description here...">
+            <button onclick="showCardsContainingDescriptionB()">Submit</button>
+        </div>
+
+
         <div class="album py-5 bg-body-tertiary">
             <div class="container">
                 <div id="col" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
