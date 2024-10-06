@@ -1,4 +1,10 @@
-
+function loadMovies(myMovies, n) {
+    // ---------------------
+    // make array of objects
+    // ---------------------
+    const arrayMovies = myMovies["movies"];
+    console.log(arrayMovies);
+}
 
 function showCardsSortedByPriceLowHigh() {
     fetch("./MoviesFromJSON.json")
