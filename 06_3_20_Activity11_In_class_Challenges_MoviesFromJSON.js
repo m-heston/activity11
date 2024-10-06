@@ -27,6 +27,10 @@ function showCardsContainingDescriptionB() {
     .catch(err => console.log("Error :"+err));
 }
 
+function changeColor(id) {
+    let field = document.getElementById(id);
+    field.style.backgroundColor = "red";
+}
 
 function loadMovies(myMovies, n) {
     // ---------------------
@@ -73,7 +77,7 @@ function loadMovies(myMovies, n) {
         AddCardMovie.innerHTML = `
         <div class="card shadow-sm">
         <img src=${url} class="card-img-top" alt="..."></img>
-        <div class="card-body">
+        <div class="card-body" onclick="changeColor(this.id)">
         <p class="card-text"> <strong>${title}</strong>, ${year}, $${price}</p>
         </div>
         </div>
