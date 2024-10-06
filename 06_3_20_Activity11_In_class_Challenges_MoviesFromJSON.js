@@ -1,3 +1,20 @@
+
+
+function showCardsSortedByPriceLowHigh() {
+    fetch("./MoviesFromJSON.json")
+    .then(response => response.json())
+    .then(myMovies => loadMovies(myMovies, 1))
+    .catch(err => console.log("Error :"+err));
+}
+
+function showCardsSortedByPriceHighLow() {
+    fetch("./MoviesFromJSON.json")
+    .then(response => response.json())
+    .then(myMovies => loadMovies(myMovies, 2))
+    .catch(err => console.log("Error :"+err));
+}
+
+
 function loadMovies(myMovies, n) {
     // ---------------------
     // make array of objects
@@ -40,20 +57,6 @@ function loadMovies(myMovies, n) {
     } // end of for
         
 
-}
-
-function showCardsSortedByPriceLowHigh() {
-    fetch("./MoviesFromJSON.json")
-    .then(response => response.json())
-    .then(myMovies => loadMovies(myMovies, 1))
-    .catch(err => console.log("Error :"+err));
-}
-
-function showCardsSortedByPriceHighLow() {
-    fetch("./MoviesFromJSON.json")
-    .then(response => response.json())
-    .then(myMovies => loadMovies(myMovies, 2))
-    .catch(err => console.log("Error :"+err));
 }
 /*
     Author: Molly Heston
